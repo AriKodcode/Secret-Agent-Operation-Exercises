@@ -1,8 +1,10 @@
 class Agent:
+    total_agents = 0
 
     def __init__(self, code_name, clearance_level):
         self.code_name = code_name
         self._clearance_level = clearance_level
+        Agent.total_agents += 1
 
     def report(self):
         print(f"Agent {self.code_name}, reporting {self._clearance_level}")
@@ -14,3 +16,7 @@ class Agent:
         if 1 < level < 10:
             self._clearance_level = level
             return level
+
+    @staticmethod
+    def get_total_agents(self):
+        print(Agent.total_agents)
